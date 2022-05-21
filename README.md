@@ -25,8 +25,8 @@ root                    (project root folder)
 * Python 3.8.0
 
 ## Authors
-* Madalyn Mounts ()
-* Samuel Ernesto Narvaez Peinado ()
-* Agipare Emmanuel ()
-* Stephen Port ()
+* Madalyn Mounts (mou21015@byui.edu)
+* Samuel Ernesto Narvaez Peinado (nar20002@byui.edu)
+* Agipare Emmanuel (agi22001@byui.edu)
+* Stephen Port (por21022@byui.edu)
 * Mohamed Nasiru ()
