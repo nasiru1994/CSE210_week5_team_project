@@ -67,3 +67,4 @@ class TerminalService:
         print("^^^^^^^^^^^^^^^^^^^")
         self._parachute.draw()
         print('What is the word?')
+       
