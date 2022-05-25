@@ -38,3 +38,6 @@ class Parachute:
         """
         for i in self._diagram:
             print(i)
+
+#obj = Parachute()
+#obj._draw()

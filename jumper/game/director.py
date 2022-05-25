@@ -102,5 +102,7 @@ class Director:
              self._terminal.write_message("(.^.)parachute at critical condition. Two chances remains")
 
         if len(self._parachute._diagram)== 0:
+            self._terminal._game_loss()
+            self._isPlaying = False
             self._terminal.game_loss(f"You loss, the word was {self._random_word_chose}")
             self._isPlaying = False

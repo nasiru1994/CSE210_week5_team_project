@@ -37,6 +37,9 @@ class Puzzle:
             string: A choice from the player.
         """
         return self._choice
+        
+#obj = Puzzle()
+#print(obj._word)
     
     def _split_chosen_word(self, chosen_word):
         """Splits chosen word into letters.
