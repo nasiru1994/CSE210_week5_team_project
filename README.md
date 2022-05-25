@@ -9,7 +9,7 @@ Make sure you have Python 3.8.0 or newer installed and running on your machine. 
 ```
 python3 jumper
 ```
-You can also run the program from an IDE like Visual Studio Code. Start your IDE and open the project folder. Select the main module inside the hunter folder and click the "run" icon.
+You can also run the program from an IDE like Visual Studio Code. Start your IDE and open the project folder. Select the main module inside the jumper folder and click the "run" icon.
 
 ## Project Structure
 The project files and folders are organized as follows:
@@ -25,8 +25,8 @@ root                    (project root folder)
 * Python 3.8.0
 
 ## Authors
-* Madalyn Mounts ()
-* Samuel Ernesto Narvaez Peinado ()
-* Agipare Emmanuel ()
-* Stephen Port ()
+* Madalyn Mounts (mou21015@byui.edu)
+* Samuel Ernesto Narvaez Peinado (nar20002@byui.edu)
+* Agipare Emmanuel (agi22001@byui.edu)
+* Stephen Port (por21022@byui.edu)
 * Mohamed Nasiru ()
