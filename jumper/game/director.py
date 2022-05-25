@@ -113,3 +113,4 @@ class Director:
         if len(self._parachute._diagram)== 0:
             self._terminal._game_loss()
             self._isPlaying = False
+ 
