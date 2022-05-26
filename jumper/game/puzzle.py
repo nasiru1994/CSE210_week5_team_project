@@ -1,22 +1,19 @@
+"""The puzzle class is a list of words. The responsibility of the class is to choose a
+random word
+from the list."""
 import random
-
 class Puzzle:
-    """The puzzle class is a list of words. The responsibility of the class is to choose a
-        random word from the list.
-    """
-
-    def __init__(self):
-        """Constructs a new Puzzle.
+    """Constructs a new Puzzle.
 
         Args:
             self (Puzzle): An instance of Puzzle.
         """
-        self._word = ["joel", "samoa", "limhi"]
+    def __init__(self):
+        self._word = ["limhi", "samoa","joel"]
         self._choice = random.choice(self._word)
-        self._chosen_letters = []
-        self._blank_spaces = ""
+        
 
-    def _get_word(self):
+    def get_word(self):
         """Gets a word for the player.
 
         Args:
@@ -27,38 +24,22 @@ class Puzzle:
         """
         return self._word
         
-    def _get_choice(self):
-        """Gets a choice from the player.
+    def get_choice(self):
+        """Gets a choice word from list choose by the computer.
 
         Args:
             self (Puzzle): An instance of Puzzle.
         
         Returns:
-            string: A choice from the player.
+            string: A choice from the computer.
         """
         return self._choice
         
 #obj = Puzzle()
 #print(obj._word)
-    
-    def _split_chosen_word(self, chosen_word):
-        """Splits chosen word into letters.
 
-        Args:
-            self (Puzzle): An instance of Puzzle.
-        """
-        self._chosen_letters = []
+ 
 
-        for letter in chosen_word:
-            self._chosen_letters.append(letter)
-    
-    def solve_puzzle(self, letter):
-        """Decides if letter matches chosen letters.
+ 
 
-        Args:
-            self (Puzzle): An instance of Puzzle.
-        """
-        if letter in self._chosen_letters:
-            print("\nCorrect Letter!")
-        else:
-            print("\nWrong letter!")
+
