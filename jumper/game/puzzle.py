@@ -9,7 +9,7 @@ class Puzzle:
             self (Puzzle): An instance of Puzzle.
         """
     def __init__(self):
-        self._word = ["limhi", "samoa","joel"]
+        self._word = ["class", "mango"]
         self._choice = random.choice(self._word)
         
 

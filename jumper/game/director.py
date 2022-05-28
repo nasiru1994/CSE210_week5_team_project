@@ -22,7 +22,7 @@ class Director:
         self._player = ""
         self._random_word_chose = self._puzzle.get_choice()
         self._parachute_diagram = self._parachute.get_diagram()
-        self._player_guess_correctly = []
+        self._correct_guess = ["_", "_","_","_","_",]
         self._finalString = ""
 
     def start_game(self):
@@ -32,33 +32,18 @@ class Director:
             self (Director): an instance of Director.
         """
         self._terminal.display()
-        self._give_player_hint()
         while self._isPlaying:
             self._get_inputs()
             self._do_updates()
             self._do_output()
-        
-    def _give_player_hint(self):
-        """Gives the player hints.
-
-        Args:
-            self (Director): An instance of Director.
-        """
-        if self._random_word_chose == "joel":
-            self._terminal.write_message("the word is a name of a person not more than 7 letters")
-        elif self._random_word_chose == "limhi":
-            self._terminal.write_message("The word is a name in Book of Mormon")
-        elif self._random_word_chose == "samoa":
-            self._terminal.write_message("The word is a country with letter s at begining")
-        
-    
+   
     def get_final_string(self):
         """Get final string from player guess.
 
         Args:
             self (Director): An instance of Director.
         """
-        self._finalString = "".join(self._player_guess_correctly)
+        self._finalString = "".join(self._correct_guess)
         return self._finalString
         
     def _get_inputs(self):
@@ -79,17 +64,47 @@ class Director:
         """
         if self._random_word_chose.find(self._player)== -1:
             self._parachute_diagram.pop(0)
-            self._player_guess_correctly.clear()
-            self._finalString = "" 
             self._parachute.draw()
-
-            self._terminal.write_message("wrong letter. Your word building is reset")
+            self._terminal.write_message("wrong letter. Parachute destroy")
             return self._parachute_diagram
-        else:
-            self._terminal.write_message(self._player +"______" + " is correct")
-            self._player_guess_correctly.append(self._player)
-            self._correct_guess_counter += 1
-            #print (self._correct_guess_counter) 
+        
+        if self._random_word_chose == "class" and self._player == "c":
+            self._correct_guess[0] = "c"
+            self._terminal.write_message(self.get_final_string())
+            
+        elif self._random_word_chose == "class" and self._player == "l":
+            self._correct_guess[1] = "l"
+            self._terminal.write_message(self.get_final_string())
+            
+        elif self._random_word_chose == "class"and self._player == "a":
+            self._correct_guess[2] = "a"
+            self._terminal.write_message(self.get_final_string())
+
+        elif self._random_word_chose == "class" and self._player == "s":
+            self._correct_guess[3] = "s"
+            self._correct_guess[4] = "s"
+            self._terminal.write_message(self.get_final_string())
+
+        #logic for mango
+        elif self._random_word_chose == "mango" and self._player == "m":
+            self._correct_guess[0] = "m"
+            self._terminal.write_message(self.get_final_string())
+        
+        elif self._random_word_chose == "mango" and self._player == "a":
+            self._correct_guess[1] = "a"
+            self._terminal.write_message(self.get_final_string())
+
+        elif self._random_word_chose == "mango" and self._player == "n":
+            self._correct_guess[2] = "n"
+            self._terminal.write_message(self.get_final_string())
+        
+        elif self._random_word_chose == "mango" and self._player == "g":
+            self._correct_guess[3] = "g"
+            self._terminal.write_message(self.get_final_string())
+        
+        elif self._random_word_chose == "mango" and self._player == "o":
+            self._correct_guess[4] = "o"
+            self._terminal.write_message(self.get_final_string()) 
            
     
     def _do_output(self):
@@ -101,18 +116,13 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        self._finalString = "".join(self._player_guess_correctly)
-        self._terminal.write_message("building word if you guess a correct letter: " + self._finalString)
-        if self._correct_guess_counter == 7:
-            self._terminal.write_message("Just a HINT!!, to win, you have to enter the letters of the word chronologically\nStart the word spelling again")
-            self._player_guess_correctly.clear()
 
-        if self._finalString == self._random_word_chose:
+        if self.get_final_string() == self._random_word_chose:
             self._terminal.write_message(f"you win\nThe word was {self._random_word_chose}")
             self._isPlaying = False
 
 
-        if len(self._parachute_diagram)== 2:
+        if len(self._parachute_diagram)== 2 and self._random_word_chose.find(self._player) == -1:
             self._terminal.write_message("(.^.)parachute at critical condition. Two chances remains")
 
         if len(self._parachute._diagram)== 0:
